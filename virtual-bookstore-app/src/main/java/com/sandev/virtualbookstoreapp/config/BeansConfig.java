@@ -1,0 +1,26 @@
+package com.sandev.virtualbookstoreapp.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.domain.AuditorAware;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.util.AntPathMatcher;
+
+@Configuration
+public class BeansConfig {
+    @Bean
+    public AntPathMatcher antPathMatcher() {
+        return new AntPathMatcher();
+    }
+
+    @Bean
+    public AuditorAware<String> auditorProvider() {
+        return new ApplicationAuditorAware();
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+}
