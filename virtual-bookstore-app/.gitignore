@@ -35,3 +35,6 @@ build/
 
 ### ENV files ###
 .env
+#src/main/resources/keys/local-only/public_key.pem
+#src/main/resources/keys/local-only/private_key.pem
+src/main/resources/keys/local-only/**
